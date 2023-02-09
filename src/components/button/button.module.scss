@@ -1,0 +1,14 @@
+@use "src/assets/styles/vars";
+@use "src/assets/styles/mixins";
+
+%button-shared {
+  cursor: pointer;
+}
+
+.button_link {
+  color: vars.$blue;
+  border-bottom: 1px vars.$blue dotted;
+  padding: 0;
+  @extend %button-shared;
+  background-color: inherit;
+}

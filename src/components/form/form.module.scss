@@ -1,0 +1,16 @@
+@use "src/assets/styles/vars";
+@use "src/assets/styles/mixins";
+
+.form {
+  background-color: vars.$white;
+  max-width: 1169px;
+  width: 100%;
+  min-height: 758px;
+  padding: 90px;
+}
+
+@include mixins.media-tablet {
+  .form {
+    padding: 30px;
+  }
+}
