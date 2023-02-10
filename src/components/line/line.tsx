@@ -7,11 +7,5 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Line: React.FC<Props> = ({ mt, mb, style, ...rest }) => {
-  return (
-    <div
-      className={st["line"]}
-      style={{ marginBottom: mb, marginTop: mt, ...style }}
-      {...rest}
-    />
-  );
+  return <div className={st["line"]} style={{ marginBottom: mb, marginTop: mt, ...style }} {...rest} />;
 };

@@ -1,0 +1,61 @@
+@use "src/assets/styles/vars";
+@use "src/assets/styles/mixins";
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 916px;
+  align-items: baseline;
+}
+
+.label {
+  font-size: 21px;
+  padding-right: 20px;
+  min-width: 225px;
+}
+
+.label-container {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  font-size: 16px;
+  color: black;
+
+  .checkmark {
+    position: relative;
+    background-color: white;
+    border: 1px solid vars.$checkbox;
+    min-height: 12px;
+    min-width: 12px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 2px;
+      width: 8px;
+      height: 7px;
+      background-image: url(../../assets/images/checkmark.svg);
+      display: none;
+    }
+  }
+
+  .checkbox {
+    &:focus + .checkmark,
+    &:hover + .checkmark {
+      outline: 2px solid vars.$blue;
+    }
+    &:checked + .checkmark::after {
+      display: block;
+    }
+  }
+}
+
+@include mixins.media-mobile {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .label {
+    margin-bottom: 10px;
+  }
+}

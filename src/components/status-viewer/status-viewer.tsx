@@ -9,22 +9,20 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   wrapperStyle?: React.CSSProperties;
 }
 
-export const StatusViewer: React.FC<Props> = ({
-  className,
-  statusValue,
-  handleStatusChange,
-  wrapperStyle,
-}) => {
+export const StatusViewer: React.FC<Props> = ({ className, statusValue, handleStatusChange, wrapperStyle }) => {
   const [isChangeMode, setIsChangeMode] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const onStatusChangeClick = useCallback(() => {
-    setIsChangeMode((prev) => !prev);
+    setIsChangeMode(true);
+  }, []);
 
-    if (isChangeMode && inputRef.current) {
+  const handleOnBlur = useCallback(() => {
+    if (inputRef.current) {
+      setIsChangeMode(false);
       handleStatusChange(inputRef.current.value);
     }
-  }, [handleStatusChange, isChangeMode]);
+  }, [handleStatusChange]);
 
   useEffect(() => {
     if (isChangeMode) {
@@ -38,21 +36,14 @@ export const StatusViewer: React.FC<Props> = ({
       <div className={st["right-block"]}>
         <div className={st["right-block__top"]}>
           <p className={st["heading-right"]}>Человек №3596941</p>
-          <Button
-            onClick={onStatusChangeClick}
-            variant={ButtonVariant.Link}
-            style={{ alignSelf: "end" }}
-          >
-            {isChangeMode ? (
-              <span>Сохранить&nbsp;статус</span>
-            ) : (
-              <span>Сменить&nbsp;статус</span>
-            )}
+          <Button onClick={onStatusChangeClick} variant={ButtonVariant.Link} style={{ alignSelf: "end" }}>
+            {!isChangeMode && <span>Сменить&nbsp;статус</span>}
           </Button>
         </div>
         <div className={st["right-block__bottom"]}>
           {isChangeMode ? (
             <input
+              onBlur={handleOnBlur}
               defaultValue={statusValue}
               ref={inputRef}
               className={st["bottom__input"]}

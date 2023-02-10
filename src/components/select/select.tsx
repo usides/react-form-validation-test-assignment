@@ -10,14 +10,7 @@ interface Props extends React.SelectHTMLAttributes<HTMLSelectElement> {
   wrapperStyle?: React.CSSProperties;
 }
 
-export const Select: React.FC<Props> = ({
-  label,
-  options = [],
-  labelKey,
-  valueKey,
-  wrapperStyle,
-  ...rest
-}) => {
+export const Select: React.FC<Props> = ({ label, options = [], labelKey, valueKey, wrapperStyle, ...rest }) => {
   return (
     <div className={clsx(st["wrapper"])} style={{ ...wrapperStyle }}>
       <label className={st["label"]} htmlFor={label}>

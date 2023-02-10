@@ -1,0 +1,22 @@
+@use "src/assets/styles/vars";
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: vars.$background;
+}
+
+.submit-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  column-gap: 12px;
+}
+
+.timestamp {
+  color: vars.$label;
+  font-size: 12px;
+}

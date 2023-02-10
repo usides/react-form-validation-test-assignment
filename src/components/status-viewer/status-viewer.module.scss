@@ -19,7 +19,7 @@
   }
 
   &__bottom {
-    background-color: vars.$background;
+    background-color: vars.$boxBgColor;
     padding: 0 12px;
     min-height: 46px;
     display: flex;
@@ -29,7 +29,7 @@
       content: "";
       display: block;
       position: absolute;
-      border-color: transparent transparent vars.$background transparent;
+      border-color: transparent transparent vars.$boxBgColor transparent;
       border-width: 6px;
       border-style: solid;
       bottom: 100%;
@@ -49,6 +49,7 @@
   &__text-holder {
     word-wrap: break-word;
     width: 100%;
+    color: vars.$boxTextColor;
   }
 }
 

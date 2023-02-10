@@ -50,7 +50,7 @@
   line-height: 20px;
 }
 
-@include mixins.media-tablet {
+@include mixins.media-large {
   .right-block {
     flex-wrap: wrap;
 

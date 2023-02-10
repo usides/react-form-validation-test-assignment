@@ -22,13 +22,13 @@ export const Button: React.FC<Props> = ({
     <button
       className={clsx(
         {
+          [st["button_default"]]: variant === ButtonVariant.Default,
           [st["button_link"]]: variant === ButtonVariant.Link,
         },
-        className
+        className,
       )}
       type={type}
-      {...rest}
-    >
+      {...rest}>
       {children}
     </button>
   );

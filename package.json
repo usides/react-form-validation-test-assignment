@@ -1,5 +1,6 @@
 {
-  "name": "testing-react-ts-env",
+  "name": "react-form-validation-test-assignment",
+  "homepage": "https://usides.github.io/react-form-validation-test-assignment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,10 +20,10 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
