@@ -6,12 +6,14 @@ import { Button, ButtonVariant } from "src/components/button";
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   statusValue: string;
   handleStatusChange: (value: string) => void;
+  wrapperStyle?: React.CSSProperties;
 }
 
 export const StatusViewer: React.FC<Props> = ({
   className,
   statusValue,
   handleStatusChange,
+  wrapperStyle,
 }) => {
   const [isChangeMode, setIsChangeMode] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -31,7 +33,7 @@ export const StatusViewer: React.FC<Props> = ({
   }, [isChangeMode]);
 
   return (
-    <div className={clsx(st["wrapper"], className)}>
+    <div className={clsx(st["wrapper"], className)} style={{ ...wrapperStyle }}>
       <p className={st["heading-left"]}>Здравствуйте,&nbsp;</p>
       <div className={st["right-block"]}>
         <div className={st["right-block__top"]}>
@@ -39,7 +41,7 @@ export const StatusViewer: React.FC<Props> = ({
           <Button
             onClick={onStatusChangeClick}
             variant={ButtonVariant.Link}
-            className={st["top__button"]}
+            style={{ alignSelf: "end" }}
           >
             {isChangeMode ? (
               <span>Сохранить&nbsp;статус</span>

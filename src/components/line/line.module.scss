@@ -1,0 +1,6 @@
+@use "src/assets/styles/vars";
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid vars.$line;
+}

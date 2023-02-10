@@ -1,0 +1,59 @@
+@use "src/assets/styles/vars";
+@use "src/assets/styles/mixins";
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 559px;
+  align-items: baseline;
+}
+
+.label {
+  font-size: 21px;
+  padding-right: 20px;
+  min-width: 225px;
+}
+
+.select-box {
+  width: 100%;
+  max-width: 336px;
+  position: relative;
+  background-color: vars.$white;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 9px;
+    background-image: url(../../assets/images/arrow.svg);
+    bottom: 11px;
+    right: 10px;
+  }
+}
+
+.select-element {
+  appearance: none;
+  min-height: 31px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 26px;
+  font-size: 16px;
+  border: 1px solid vars.$label;
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+  margin: 0;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+@include mixins.media-mobile {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .label {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,76 @@
+@use "src/assets/styles/vars";
+@use "src/assets/styles/mixins";
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 916px;
+  align-items: baseline;
+}
+
+.label {
+  font-size: 21px;
+  padding-right: 20px;
+  min-width: 225px;
+}
+
+.right-block {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+
+  .input-wrapper {
+    width: 100%;
+    max-width: 335px;
+  }
+
+  .hint {
+    font-size: 12px;
+    margin-left: 17px;
+    color: vars.$label;
+    line-height: 20px;
+  }
+}
+
+.input-element {
+  min-height: 31px;
+  max-width: 335px;
+  width: 100%;
+  border: 1px solid vars.$label;
+  padding-left: 12px;
+  &_error {
+    border-color: vars.$red;
+  }
+}
+
+.error-message {
+  font-size: 12px;
+  margin-top: 4px;
+  color: vars.$red;
+  line-height: 20px;
+}
+
+@include mixins.media-tablet {
+  .right-block {
+    flex-wrap: wrap;
+
+    .hint {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+  }
+}
+
+@include mixins.media-mobile {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .input-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .label {
+    margin-bottom: 10px;
+  }
+}

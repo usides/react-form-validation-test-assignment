@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    &:before {
+    &::before {
       content: "";
       display: block;
       position: absolute;
@@ -36,10 +36,6 @@
       left: 11px;
     }
   }
-}
-
-.top__button {
-  align-self: end;
 }
 
 .bottom {
