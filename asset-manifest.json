@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-form-validation-test-assignment/static/css/main.1d06f0e8.css",
+    "main.js": "/react-form-validation-test-assignment/static/js/main.b0be7dd4.js",
+    "index.html": "/react-form-validation-test-assignment/index.html",
+    "static/media/arrow.svg": "/react-form-validation-test-assignment/static/media/arrow.f3c1437417dfb1cc1bdf.svg",
+    "static/media/checkmark.svg": "/react-form-validation-test-assignment/static/media/checkmark.d80e1a4dc13c9117886f.svg",
+    "main.1d06f0e8.css.map": "/react-form-validation-test-assignment/static/css/main.1d06f0e8.css.map",
+    "main.b0be7dd4.js.map": "/react-form-validation-test-assignment/static/js/main.b0be7dd4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d06f0e8.css",
+    "static/js/main.b0be7dd4.js"
+  ]
+}
